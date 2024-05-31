@@ -1,52 +1,41 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-// import { 
-//     a 
-// } from 'react-router-dom'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
   return (
-    <>
-        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
-        <div className="container-fluid">
-        <a className="navbar-brand" herf="#">{props.title}</a>
-        <butherfn className="navbar-herfggler" type="butherfn" data-bs-herfggle="collapse" data-bs-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="herfggle navigation">
-            <span className="navbar-herfggler-icon"></span>
-        </butherfn>
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#">{props.title}</a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auherf mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-                <a className="nav-a active" aria-current="page" herf="#">Home</a>
+              <a className="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li className="nav-item">
-                <a className="nav-a" herf="/about">{props.abt}</a>
+              <a className="nav-link" href="/about">{props.abt}</a>
             </li>
-            </ul>
-
-            <div class={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
-                <input class="form-check-input" onClick={props.herfggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Enable Dark Mode</label>
-            </div>
-
-            {/* <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-            <butherfn classNameName="btn btn-outline-success" type="submit">Search</butherfn>
-            </form> */}
+          </ul>
+          <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+            <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
+            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+          </div>
         </div>
-        </div>
-        </nav>
-
-    </>
-  )
+      </div>
+    </nav>
+  );
 }
 
-
-Navbar.proherfTypes = {
-    title : PropTypes.string,
-    abt : PropTypes.string
-}
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  abt: PropTypes.string.isRequired,
+  mode: PropTypes.string.isRequired,
+  toggleMode: PropTypes.func.isRequired
+};
 
 Navbar.defaultProps = {
-    title : 'Set title here',
-    abt: 'About text here'
-}
+  title: 'Set title here',
+  abt: 'About text here'
+};

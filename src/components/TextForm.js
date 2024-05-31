@@ -48,7 +48,7 @@ export default function TextForm(props) {
             </div>    
 
             <button className="btn btn-primary mx-1" onClick={handleUpClick} > Convert to Upper Case </button>
-            <button className="btn btn-primary mx-1" onClick={handleLoClick} > Convert to Upper Case </button>
+            <button className="btn btn-primary mx-1" onClick={handleLoClick} > Convert to Lower Case </button>
             <button className="btn btn-primary mx-1" onClick={handelCopy} > Copy Text </button>
             <button className="btn btn-primary mx-1" onClick={handelExtraSpaces} > Remove Extra Spaces </button>
             
